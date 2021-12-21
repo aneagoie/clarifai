@@ -87,8 +87,9 @@ class App {
   }
 
   _init(options) {
-    let apiEndpoint = options.apiEndpoint ||
-      (process && process.env && process.env.API_ENDPOINT) || 'https://api.clarifai.com';
+    let apiEndpoint = options.apiEndpoint || 'https://api.clarifai.com'; 
+// This has been removed to work with Webpack 5: https://webpack.js.org/migrate/5/#run-a-single-build-and-follow-advice
+//       (process && process.env && process.env.API_ENDPOINT) || 'https://api.clarifai.com'; 
     this._config = {
       apiEndpoint,
       clientId: options.clientId,
